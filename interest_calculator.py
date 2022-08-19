@@ -4,7 +4,7 @@ print("Novachrono's Simple Interest Calculator")
 def calculator():
     
     print("What do you want to solve?")
-    cal = input("Enter \"I\" for Interest, \"P\" for Principal, \"R\" for Rate, \"T\" for Time(years): ")
+    cal = input("Enter \"I\" for Interest, \"P\" for Principal, \"R\" for Rate(%), \"T\" for Time(years): ")
     # print(cal)
     cal = cal.lower()
     # print(cal)
@@ -14,7 +14,7 @@ def calculator():
     while not valid:
         while cal not in cal_pick:
             print("Invalid input!")
-            cal = input("Enter \"I\" for Interest, \"P\" for Principal, \"R\" for Rate, \"T\" for Time(years): ")
+            cal = input("Enter \"I\" for Interest, \"P\" for Principal, \"R\" for Rate(%), \"T\" for Time(years): ")
             cal = cal.lower()
 
         if cal == "i":
@@ -26,7 +26,7 @@ def calculator():
                 I = (P * R * T) / 100
                 print("Interest = ", I)
             except:
-                print("Please only input only digits greater than zero")
+                print("Please input only digits greater than zero.")
 
         elif cal == "p":
             try:
@@ -37,7 +37,7 @@ def calculator():
                 P = (I * 100) / (R * T)
                 print("Principal = ", P)
             except:
-                print("Please only input only digits greater than zero")
+                print("Please input only digits greater than zero.")
 
         elif cal == "r":
             try:
@@ -48,7 +48,7 @@ def calculator():
                 R = (I * 100) / (P * T)
                 print("Rate = ", R, "%")
             except:
-                print("Please only input only digits greater than zero")
+                print("Please input only digits greater than zero.")
 
         else:
             try:
@@ -62,7 +62,7 @@ def calculator():
                 else:
                     print("Time = ", T, "years")
             except:
-                print("Please only input only digits greater than zero")
+                print("Please input only digits greater than zero.")
         
 
 calculator()
