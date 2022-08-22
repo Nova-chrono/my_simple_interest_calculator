@@ -22,8 +22,9 @@ def calculator():
                 P = float(input("Principal: "))
                 R = float(input("Rate: "))
                 T = float(input("Time: "))
-                valid = True
                 I = (P * R * T) / 100
+                I = round(I, 2)
+                valid = True
                 print("Interest = ", I)
             except:
                 print("Please input only digits greater than zero.")
@@ -33,8 +34,9 @@ def calculator():
                 I = float(input("Interest: "))
                 R = float(input("Rate: "))
                 T = float(input("Time: "))
-                valid = True
                 P = (I * 100) / (R * T)
+                P = round(P, 2)
+                valid = True
                 print("Principal = ", P)
             except:
                 print("Please input only digits greater than zero.")
@@ -44,8 +46,9 @@ def calculator():
                 I = float(input("Interest: "))
                 P = float(input("Principal: "))
                 T = float(input("Time: "))
-                valid = True
                 R = (I * 100) / (P * T)
+                R = round(R, 2)
+                valid = True
                 print("Rate = ", R, "%")
             except:
                 print("Please input only digits greater than zero.")
@@ -55,9 +58,11 @@ def calculator():
                 I = float(input("Interest: "))
                 P = float(input("Principal: "))
                 R = float(input("rate: "))
-                valid = True
                 T = (I * 100) / (P * R)
-                if T < float(2):
+                valid = True
+                if T < float(1):
+                    print("Time = ", T, "year")
+                elif T == float(1):
                     print("Time = ", T, "year")
                 else:
                     print("Time = ", T, "years")
